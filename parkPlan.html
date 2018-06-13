@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>parkPlan</title>
+    <style>
+        #LoadingBar {
+            height: 1200px;
+            position: relative;
+        }
+
+        .load-img {
+            position: absolute;
+            top: 25%;
+            left: 44%;
+        }
+    </style>
+    <link rel="stylesheet" href="./css/parkplan.css">
+    <script src="js/echarts.js"></script>
+</head>
+<body>
+<!--loading begin-->
+<div id="LoadingBar">
+    <div class="load-img"><img src="img/load.gif" alt=""></div>
+</div>
+<!--loading end-->
+<!--header begin-->
+<header id="header">
+    <span>园区计划调度</span>
+</header>
+<!--header end-->
+<!--section1 begin-->
+<section id="section1">
+    <div class="pic1">
+        <span class="titleColor">剂型订单按时完成率</span>
+        <div class="pic1-circle">
+            <div class="pic1-circle-img">
+                <img src="./img/circle.png" alt="" class="pic1-circle-img1">
+                <img src="./img/node.png" alt="" class="pic1-circle-img2">
+                <span class="pic1-circle-span1">0</span>
+                <span class="pic1-circle-span2">0.2</span>
+                <span class="pic1-circle-span3">0.4</span>
+                <span class="pic1-circle-span4">0.6</span>
+                <span class="pic1-circle-span5">0.8</span>
+                <span class="pic1-circle-span6">1</span>
+                <span class="pic1-circle-span7">226.29%</span>
+            </div>
+        </div>
+    </div>
+    <div class="pic2">
+        <span class="titleColor">剂型包装物按时到货率</span>
+        <div class="pic1-circle">
+            <div class="pic1-circle-img">
+                <img src="./img/circle.png" alt="" class="pic1-circle-img1">
+                <img src="./img/node.png" alt="" class="pic1-circle-img22">
+                <span class="pic1-circle-span1">0</span>
+                <span class="pic1-circle-span2">0.2</span>
+                <span class="pic1-circle-span3">0.4</span>
+                <span class="pic1-circle-span4">0.6</span>
+                <span class="pic1-circle-span5">0.8</span>
+                <span class="pic1-circle-span6">1</span>
+                <span class="pic1-circle-span7">88.2%</span>
+            </div>
+        </div>
+
+    </div>
+    <div class="pic3" id="main1">
+    </div>
+    <div class="pic4" id="main2">
+    </div>
+</section>
+<!--section1 end-->
+
+<!--section2 begin-->
+<section id="section2">
+    <div class="pic5" id="main3">
+
+    </div>
+    <div class="pic6" id="main4">
+
+    </div>
+    <div class="pic7" id="main5">
+
+    </div>
+</section>
+<!--section2 end-->
+
+<!--section3 begin-->
+<section id="section3">
+    <div class="pic8">
+        <span class="titleColor">水剂部分按时完成率</span>
+        <div class="pic1-circle pic8-circle" id="main6">
+
+        </div>
+    </div>
+    <div class="pic9">
+        <span class="titleColor">粉粒剂按时完成率</span>
+        <div class="pic1-circle pic8-circle" id="main7">
+
+        </div>
+
+    </div>
+    <div class="pic10" id="main8">
+
+    </div>
+    <div class="pic11" id="main9">
+    </div>
+</section>
+<!--section3 end-->
+
+<script src="./js/parkPlan.js"></script>
+<script>
+    window.onload = function () {
+        initPage();
+        getRem(1080, 100);
+        $("#topbar").scrollupbar()
+    };
+    window.onresize = function () {
+        getRem(1080, 100);
+        $("#topbar").scrollupbar()
+    };
+    function initPage() {
+        let objLoading = document.getElementById("LoadingBar");
+        if (objLoading != null) {
+            objLoading.style.display = "none";
+        }
+    }
+</script>
+</body>
+</html>
